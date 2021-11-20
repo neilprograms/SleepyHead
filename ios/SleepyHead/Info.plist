@@ -50,6 +50,6 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
   <key>UIStatusBarStyle</key>
-  <string>UIStatusBarStyleDefault</string>
+  <string>UIStatusBarStyleDefault</string> 
 </dict>
 </plist>
