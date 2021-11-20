@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "SleepyHead",
+    "slug": "SleepyHead",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "SleepyHead"
+}
