@@ -1,6 +1,6 @@
 //React and UI Kitten Imports
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 
 import { Layout, Button, ButtonGroup, Text, Icon } from '@ui-kitten/components';
 
@@ -8,7 +8,7 @@ import { Camera } from 'expo-camera';
 import TopNavigationSimpleUsageShowcase from './topNav'
 
 import { SafeAreaView } from 'react-native';
-
+import logo from '../assets/img/logo.png'
 
 const CameraView = () => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -42,7 +42,7 @@ const CameraView = () => {
             }}>
             <Icon
               style={styles.icon}
-              fill='#8F9BB3'
+              fill='#3366FF'
               name='flip-2-outline'
             />
           </TouchableOpacity>
@@ -58,11 +58,7 @@ export const Home = () => {
       <Layout style={styles.layoutHeaderComp} >
         <SafeAreaView>
           <View style={styles.topTitle}>
-            <Icon
-              style={styles.icon}
-              fill='#8F9BB3'
-              name='car-outline'
-            />
+            <Image source={logo} style={styles.logo} /> 
             <Text style={styles.title} category='h4'>Sleepy Heads</Text>
           </View>
         </SafeAreaView>
@@ -82,6 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 15,
     overflow: "hidden",
+    //backgroundColor: "#F6F2E8",
   },
   camera: {
     flex: 1,
@@ -109,25 +106,31 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: 'center',
     overflow: "visible",
+    backgroundColor: "#111111"
   },
   layoutHeaderComp: {
     flex: 1,
   },
   layoutCameraComp: {
-    flex: 9,
+    flex: 8,
   },
   topTitle: {
     flexDirection: "row",
     marginLeft: 20,
     marginTop: 5,
-    alignItems: "flex-start",
-    justifyContent: "space-between",
+    alignItems: "center",
+    justifyContent: "center",
     overflow: "visible",
   },
   icon: {
     flex: 1,
     width: 30,
     height: 30,
+  },
+  logo: {
+    width: 30,
+    height: 30,
+    justifyContent: "center"
   },
   title: {
     flex: 1,

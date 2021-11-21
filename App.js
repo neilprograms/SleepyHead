@@ -1,6 +1,6 @@
 //React and UI Kitten Imports
 import React, { useState } from 'react';
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Image } from 'react-native';
 
 import { ApplicationProvider, Layout, Text, Button, IconRegistry } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
@@ -15,6 +15,49 @@ const Stack = createNativeStackNavigator();
 //Components
 import SettingsMain from './components/settings';
 import { Home } from './components/home';
+import fullLogo from './assets/img/fullLogo.png'
+
+const LetsGoPage = () => {
+  const [letsGo, setLetsGo] = useState(false);
+
+  const chooseLayout = () => {
+    if(letsGo) {
+        return <Page />
+    }
+    else {
+      return(
+        <View style={lgStyle.view}>
+          <SafeAreaView>
+            <Text style={lgStyle.title, {margin: 20, textAlign:'center'}} category='h4'>Sleepy Heads</Text>
+          </SafeAreaView>
+          <Image style={lgStyle.image} source={fullLogo}/>
+          <Text style={lgStyle.title, {margin: 20, textAlign:'center'}} category='h2'>The app perfect for roadtrips and long drives!</Text>
+          <Text style={lgStyle.title, {marginBottom: 20}} category='p1'>Driving safely made easy</Text>
+          <Button style={{width: "75%"}} onPress={()=>{setLetsGo(true)}}>Let's Start</Button>
+        </View>
+      )
+    }
+  }
+
+  return chooseLayout()
+
+}
+
+const lgStyle = StyleSheet.create({
+  title: {
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: 300,
+    height: 300,
+  },
+  view: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: "100%",
+  }
+})
 
 const Page = () => {
 
@@ -79,7 +122,7 @@ export default function App() {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
       <IconRegistry icons={EvaIconsPack} />
-      <Page />
+      <LetsGoPage />
     </ApplicationProvider>
   );
 }
@@ -89,6 +132,7 @@ const styles = StyleSheet.create({
   navContainer: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: "#F7F9FC",
   },
   pageContainer: {
     flex: 8,
@@ -115,6 +159,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: "#F7F9FC",
 },
 });
 
