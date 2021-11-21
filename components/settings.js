@@ -14,9 +14,6 @@ const Stack = createNativeStackNavigator();
 // import sound1 from '../assets/mp3s/sound1.wav'
 
 
-
-
-
 export default function SettingsMain() {
   return (
     <NavigationContainer>
@@ -55,7 +52,7 @@ const Settings = ({ navigation }) => {
 }
 
 const SoundSelection = () => {
-  // const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   // const [sound1, setSound1] = React.useState();
   // async function playSound1() {
