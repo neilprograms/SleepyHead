@@ -1,14 +1,19 @@
 //React and UI Kitten Imports
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, SafeAreaView } from 'react-native';
-
 import { Layout, Text, Radio, RadioGroup, Icon } from '@ui-kitten/components';
+
 
 //Components
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 const Stack = createNativeStackNavigator();
+
+//Sound
+// import { Audio } from 'expo-av';
+// import sound1 from '../assets/mp3s/sound1.wav'
+
+
 
 
 
@@ -50,8 +55,27 @@ const Settings = ({ navigation }) => {
 }
 
 const SoundSelection = () => {
+  // const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [sound1, setSound1] = React.useState();
+  // async function playSound1() {
+  //   console.log('Loading Sound');
+  //   const { sound1 } = await Audio.Sound.createAsync(
+  //     require('../assets/mp3s/sound1.wav')
+  //   );
+  //   setSound1(sound1);
+  //   console.log('Playing Sound');
+  //   await sound1.playAsync();
+  // }
+  // React.useEffect(() => {
+  //   return sound1
+  //     ? () => {
+  //       console.log('Unloading Sound');
+  //       sound1.unloadAsync();
+  //     }
+  //     : undefined;
+  // }, [sound1]);
+
 
   return (
     <View style={styles.ssPage}>
@@ -146,5 +170,7 @@ const styles = StyleSheet.create({
   }
 
 });
+
+
 
 
